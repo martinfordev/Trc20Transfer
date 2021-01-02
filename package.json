@@ -1,0 +1,15 @@
+{
+  "name": "ocpaymentv1",
+  "version": "1.0.1",
+  "description": "TRC20 Transfer By MrDeveloper",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MrDeveloper",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "tronweb": "^3.2.1"
+  }
+}
