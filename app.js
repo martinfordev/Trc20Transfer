@@ -19,7 +19,7 @@ app.get('/api/moneytransfer/:privkey/:owneraddress/:toaddress/:money', (req, res
    // res.json({"message": S});
    res.send('Private key => '+privkey+'\n'+'Owner Address =>'+owneraddress+'\n'+'To Address => '+toaddress+'\n'+'Money Count =>'+money);
 });
-app.listen(3001,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log('Server Is listen On Port 3001');
 });
 async function triggerSmartContract(privatekey,owner,to,moneyc) {
