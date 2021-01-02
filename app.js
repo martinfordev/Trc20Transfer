@@ -6,7 +6,7 @@ const fullNode = new HttpProvider("https://api.trongrid.io/");
 const solidityNode = new HttpProvider("https://api.trongrid.io/");
 const eventServer = new HttpProvider("https://api.trongrid.io/");
 app.get('/',(req,res)=>{
-    res.send('Welcome To MoneyTransfer By Ocean Software Team ');
+    res.send('Welcome To MoneyTransfer By Ocean Software Team | SoftwareDepartment@ocgate.com');
 });
 // define a simple route
 app.get('/api/moneytransfer/:privkey/:owneraddress/:toaddress/:money', (req, res) => {
