@@ -39,10 +39,10 @@ async function triggerSmartContract(privatekey,owner,to,moneyc) {
         ).send({
             feeLimit: 1000000
         }).then(output => {return output});   //console.log('- Output:', output, '\n');
-        console.log('result: ', result);
+        //console.log('result: ', result);
         return result;
     } catch(error) {
-       // console.error("trigger smart contract error",error)
+       console.error("trigger smart contract error",error)
         return error;
     }
 }
