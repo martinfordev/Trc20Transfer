@@ -18,7 +18,7 @@ app.get('/api/moneytransfer/:privkey/:owneraddress/:toaddress/:money', (req, res
     var result = triggerSmartContract(privkey,owneraddress,toaddress,money);
    // res.json({"message": S});
   // res.send('Private key => '+privkey+'\n'+'Owner Address =>'+owneraddress+'\n'+'To Address => '+toaddress+'\n'+'Money Count =>'+money);
-  console.log(result);
+  //console.log(result);
   res.json(result);
 });
 app.listen(process.env.PORT || 3000,()=>{
@@ -39,10 +39,10 @@ async function triggerSmartContract(privatekey,owner,to,moneyc) {
         ).send({
             feeLimit: 1000000
         }).then(output => {return output});   //console.log('- Output:', output, '\n');
-        console.log('result: ', result);
+        //console.log('result: ', result);
         return result;
     } catch(error) {
-        console.error("trigger smart contract error",error)
+       // console.error("trigger smart contract error",error)
         return error;
     }
 }
