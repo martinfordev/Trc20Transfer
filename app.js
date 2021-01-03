@@ -15,9 +15,10 @@ app.get('/api/moneytransfer/:privkey/:owneraddress/:toaddress/:money', (req, res
     var toaddress = req.params.toaddress;
     var money = req.params.money;
     console.log(privkey+'\n'+owneraddress+'\n'+toaddress+'\n'+money);
-   triggerSmartContract(privkey,owneraddress,toaddress,money);
+  var result= triggerSmartContract(privkey,owneraddress,toaddress,money);
    // res.json({"message": S});
-   res.send('Private key => '+privkey+'\n'+'Owner Address =>'+owneraddress+'\n'+'To Address => '+toaddress+'\n'+'Money Count =>'+money);
+  // res.send('Private key => '+privkey+'\n'+'Owner Address =>'+owneraddress+'\n'+'To Address => '+toaddress+'\n'+'Money Count =>'+money);
+  res.send(result);
 });
 app.listen(process.env.PORT || 3000,()=>{
     console.log('Server Is listen On Port 3001');
@@ -38,7 +39,9 @@ async function triggerSmartContract(privatekey,owner,to,moneyc) {
             feeLimit: 1000000
         }).then(output => {console.log('- Output:', output, '\n');});
         console.log('result: ', result);
+        return result;
     } catch(error) {
         console.error("trigger smart contract error",error)
+        return error;
     }
 }
