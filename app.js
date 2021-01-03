@@ -42,7 +42,7 @@ async function triggerSmartContract(privatekey,owner,to,moneyc) {
         //console.log('result: ', result);
         return result;
     } catch(error) {
-       console.error("trigger smart contract error",error)
+       //console.error("trigger smart contract error",error)
         return error;
     }
 }
