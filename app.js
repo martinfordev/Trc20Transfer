@@ -15,7 +15,7 @@ app.get('/api/moneytransfer/:privkey/:owneraddress/:toaddress/:money', (req, res
     var toaddress = req.params.toaddress;
     var money = req.params.money;
     console.log(privkey+'\n'+owneraddress+'\n'+toaddress+'\n'+money);
-    var result = triggerSmartContract(privkey,owneraddress,toaddress,money).then(output => res.json(output)).catch(res.json(console.error));
+    var result = triggerSmartContract(privkey,owneraddress,toaddress,money).then(output => res.json(output)).catch(res.json({ id: 0 }));
    // res.json({"message": S});
   // res.send('Private key => '+privkey+'\n'+'Owner Address =>'+owneraddress+'\n'+'To Address => '+toaddress+'\n'+'Money Count =>'+money);
   //console.log(result);
