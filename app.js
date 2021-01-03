@@ -38,7 +38,7 @@ async function triggerSmartContract(privatekey,owner,to,moneyc) {
             moneyc   //amount
         ).send({
             feeLimit: 1000000
-        }).then(output => {console.log('- Output:', output, '\n');});
+        }).then(output => {return output});   //console.log('- Output:', output, '\n');
         console.log('result: ', result);
         return result;
     } catch(error) {
